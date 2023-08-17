@@ -222,23 +222,11 @@ void insert(int *arr,int *num)
 	scanf("%d",&val);
 	printf("Enter the index number to insert at(below %d):",*num);
 	scanf("%d",&index);
-	
-	if(index==*num-1)
+	for(i= *num-1;i>index;i--)
 	{
-		*(arr+index)=val;
+		*(arr+i)=*(arr+i-1);	
 	}
-	else
-	{
-		for(i= *num-1;i>index;i--)
-		{
-			*(arr+i)=*(arr+i-1);
-			if(i==index+1)
-			{
-				*(arr+index)=val;
-			}
-		}
-	}
-	
+	*(arr+index)=val;
 	
 }
 
