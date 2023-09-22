@@ -113,7 +113,7 @@ void pop_untill_paranthesis(int *top,char *stack)
 void push_operator(int *top,char *stack,int size,char operator_)
 {
 	char val;
-	while((*top>-1)&&(get_precidence(stack[*top])>get_precidence(operator_)))
+	while((*top>-1)&&(get_precidence(stack[*top])>=get_precidence(operator_)))
 	{
 		pop(top,stack,&val);
 		printf("%c",val);
